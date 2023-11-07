@@ -1,0 +1,14 @@
+ChocolateFactory.Domain/obj/
+.vs/
+ChocolateFactory.Domain/bin/
+ChocolateFactory.Infrastructure/obj/
+ChocolateFactory.Woker/bin/
+postgres-data/
+ChocolateFactory.Woker/obj/
+ChocolateFactory.Infrastructure/bin/
+ChocolateClub.Api/bin/
+ChocolateClub.Api/obj/
+ChocolateClub.Domain/obj/
+ChocolateClub.Infrastructure/bin/
+ChocolateClub.Infrastructure/obj/
+ChocolateClub.Domain/bin/

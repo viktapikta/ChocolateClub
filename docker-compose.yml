@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  chocolatefactory.database:
+    image: postgres:14.6
+    environment:
+      POSTGRES_USER: "api"
+      POSTGRES_PASSWORD: "api"
+    ports:
+        - "5432:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+      # copy the sql script to create tables
+      - ./sql/Script0001_CreateChocolateBarTable.sql:/docker-entrypoint-initdb.d/Script0001_CreateChocolateBarTable.sql
+      - ./sql/Script0002_CreateChocolatePropertiesTable.sql:/docker-entrypoint-initdb.d/Script0002_CreateChocolatePropertiesTable.sql
+    
