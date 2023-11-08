@@ -22,16 +22,9 @@ namespace ChocolateClub.Api.Controllers
 
         [HttpGet]
         [Route("slow")]
-        public IEnumerable<ExtendedChocolateBarProfile> Get()
+        public IEnumerable<ExtendedChocolateBarProfile> Slow()
         {
-            return _chocolateService.GetExtendedChocolateBarProfileAsync1();
-        }
-
-        [HttpGet]
-        [Route("stillslow")]
-        public async Task<IEnumerable<ExtendedChocolateBarProfile>> StillSlow()
-        {
-            return await _chocolateService.GetExtendedChocolateBarProfileAsync2();
+            return _chocolateService.GetExtendedChocolateBarProfileAsync2().GetAwaiter().GetResult();
         }
 
         [HttpGet]
@@ -46,6 +39,13 @@ namespace ChocolateClub.Api.Controllers
         public async Task<IEnumerable<ExtendedChocolateBarProfile>> Faster()
         {
             return await _chocolateService.GetExtendedChocolateBarProfileAsync4();
+        }
+
+        [HttpGet]
+        [Route("veryslow")]
+        public IEnumerable<ExtendedChocolateBarProfile> VerySlow()
+        {
+            return _chocolateService.GetExtendedChocolateBarProfileAsync1();
         }
 
         [HttpGet]
